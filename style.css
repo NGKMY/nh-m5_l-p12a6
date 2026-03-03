@@ -1,0 +1,815 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ===== HEADER STYLES ===== */
+header {
+    background: linear-gradient(135deg, #b8e1ff, #d4b8ff);
+    /* Màu pastel xanh dương pha hồng nhẹ */
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #b8e1ff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a.active {
+    background-color: #fff;
+    color: #b8e1ff;
+    font-weight: 700;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    flex: 1;
+    padding: 40px 0;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(184, 225, 255, 0.3);
+}
+
+.banner-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.banner-image:hover img {
+    transform: scale(1.02);
+}
+
+.banner-image span {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 12px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
+
+/* ===== TYPOGRAPHY ===== */
+.hero-title h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #5a7a9c;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(184, 225, 255, 0.3);
+    line-height: 1.3;
+}
+
+.divider {
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #b8e1ff, #ffb8d9);
+    margin: 20px auto 40px;
+    border-radius: 2px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #6b8cae;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ffb8d9;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== INTRO TEXT ===== */
+.intro {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 30px;
+    margin: 40px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.emotional-text {
+    font-size: 1.3rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.8;
+    font-weight: 400;
+    text-align: justify;
+}
+
+/* ===== MEMORIES GRID ===== */
+.memories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.memory-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(184, 225, 255, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(184, 225, 255, 0.3);
+}
+
+.memory-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(184, 225, 255, 0.4);
+    border-color: #ffb8d9;
+}
+
+.memory-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.memory-card h4 {
+    font-size: 1.3rem;
+    color: #6b8cae;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.memory-card p {
+    color: #777;
+    font-size: 1rem;
+}
+
+/* ===== CTA BUTTON ===== */
+.cta-section {
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(145deg, #b8e1ff, #ffb8d9);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(184, 225, 255, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(184, 225, 255, 0.5);
+}
+
+.cta-button.secondary {
+    background: #fff;
+    color: #b8e1ff;
+    border: 2px solid #b8e1ff;
+    box-shadow: none;
+}
+
+.cta-button.secondary:hover {
+    background: #b8e1ff;
+    color: #fff;
+    border-color: #b8e1ff;
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title {
+    font-size: 2.5rem;
+    color: #6b8cae;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* ===== PHOTO GRID ===== */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.photo-card {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(184, 225, 255, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(184, 225, 255, 0.3);
+}
+
+.photo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(184, 225, 255, 0.4);
+    border-color: #ffb8d9;
+}
+
+.photo-placeholder {
+    background: linear-gradient(145deg, #f0f8ff, #fff0f5);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8aa9c9;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: 3px solid #b8e1ff;
+}
+
+/* ===== MESSAGES SECTION ===== */
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.message-card {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(184, 225, 255, 0.15);
+    border-left: 5px solid #ffb8d9;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.message-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(184, 225, 255, 0.25);
+}
+
+.message-content {
+    font-size: 1.1rem;
+    color: #555;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.message-author {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #b8e1ff;
+    text-align: right;
+}
+
+.message-author::before {
+    content: '— ';
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(145deg, #b8e1ff, #d4b8ff);
+    color: #fff;
+    padding: 30px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-content p {
+    margin: 8px 0;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.school-year {
+    font-weight: 700;
+    margin: 15px 0 8px;
+    font-size: 1.1rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-title h2 {
+        font-size: 2rem;
+    }
+
+    .banner-image img {
+        height: 300px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .emotional-text {
+        font-size: 1.1rem;
+    }
+
+    .memories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .message-card {
+        padding: 20px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 14px 25px;
+    }
+
+    .banner-image img {
+        height: 200px;
+    }
+
+    .footer-content h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== VIDEO SECTION ===== */
+.video-section {
+    margin: 40px 0;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(184, 225, 255, 0.3);
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+
+.video-placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    color: #ff6b9d;
+}
+
+.video-placeholder p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* ===== CONTENT CARD STYLES (Image + Text) ===== */
+
+/* Kiểu 1: Ảnh trên, văn bản dưới */
+.content-card-vertical {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(184, 225, 255, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(184, 225, 255, 0.3);
+}
+
+.content-card-vertical:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(184, 225, 255, 0.4);
+    border-color: #ffb8d9;
+}
+
+.content-card-vertical .card-image {
+    width: auto;
+    height: 220px;
+    overflow: hidden;
+}
+
+.content-card-vertical .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.content-card-vertical:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.content-card-vertical .card-content {
+    padding: 25px;
+}
+
+.content-card-vertical .card-title {
+    font-size: 1.3rem;
+    color: #6b8cae;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.content-card-vertical .card-text {
+    color: #777;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Kiểu 2: Ảnh bên trái, văn bản bên phải */
+.content-card-horizontal {
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(184, 225, 255, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(184, 225, 255, 0.3);
+    display: flex;
+    flex-direction: row;
+}
+
+.content-card-horizontal:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(184, 225, 255, 0.4);
+    border-color: #ffb8d9;
+}
+
+.content-card-horizontal .card-image {
+    flex: 0 0 40%;
+    height: auto;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.content-card-horizontal .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.content-card-horizontal:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.content-card-horizontal .card-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-card-horizontal .card-title {
+    font-size: 1.4rem;
+    color: #6b8cae;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.content-card-horizontal .card-text {
+    color: #777;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ===== CONTENT GRID ===== */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.content-grid-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* ===== SUBPAGES SPECIFIC ===== */
+.subpage-section {
+    margin-bottom: 50px;
+}
+
+.subpage-intro {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 30px;
+    margin: 40px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.subpage-intro h3 {
+    font-size: 1.8rem;
+    color: #6b8cae;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.subpage-intro p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+/* Responsive for horizontal cards */
+@media screen and (max-width: 768px) {
+    .content-card-horizontal {
+        flex-direction: column;
+    }
+    
+    .content-card-horizontal .card-image {
+        flex: none;
+        height: 200px;
+        min-height: auto;
+    }
+    
+    .video-placeholder {
+        height: 250px;
+    }
+}
+
+
+/* Header for lichsu.html - màu tím */
+body.lichsu-page header {
+    background: linear-gradient(135deg, #9b7ed9, #d4b8ff);
+}
+
+body.lichsu-page nav ul li a:hover {
+    background-color: #fff;
+    color: #9b7ed9;
+}
+
+body.lichsu-page nav ul li a.active {
+    background-color: #fff;
+    color: #9b7ed9;
+}
+
+/* Footer for lichsu.html */
+body.lichsu-page footer {
+    background: linear-gradient(145deg, #9b7ed9, #d4b8ff);
+}
+
+/* Hero title for lichsu.html - màu tím đậm */
+body.lichsu-page .hero-title h2 {
+    color: #7c5ac5;
+    text-shadow: 2px 2px 4px rgba(155, 126, 217, 0.3);
+}
+
+body.lichsu-page .divider {
+    background: linear-gradient(90deg, #9b7ed9, #ffd700);
+}
+
+body.lichsu-page .section-title {
+    color: #7c5ac5;
+}
+
+body.lichsu-page .section-title::after {
+    background: #ffd700;
+}
+
+/* Intro section for lichsu.html */
+body.lichsu-page .intro {
+    background: linear-gradient(135deg, #f5f0ff, #fff9e6);
+    border: 2px solid #9b7ed9;
+}
+
+body.lichsu-page .emotional-text {
+    color: #5a4a7a;
+}
+
+/* Card styles cho lichsu.html - phong cách khác */
+body.lichsu-page .content-card-vertical {
+    background: linear-gradient(145deg, #fff, #f8f4ff);
+    border-radius: 15px;
+    border: 2px solid #e8dff5;
+    box-shadow: 0 8px 20px rgba(155, 126, 217, 0.15);
+}
+
+body.lichsu-page .content-card-vertical:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(155, 126, 217, 0.3);
+    border-color: #ffd700;
+}
+
+body.lichsu-page .content-card-vertical .card-title {
+    color: #7c5ac5;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+body.lichsu-page .content-card-vertical .card-text {
+    color: #6b5a7a;
+}
+
+/* Horizontal cards cho lichsu.html */
+body.lichsu-page .content-card-horizontal {
+    background: linear-gradient(145deg, #fff, #f8f4ff);
+    border-radius: 15px;
+    border: 2px solid #e8dff5;
+    box-shadow: 0 8px 20px rgba(155, 126, 217, 0.15);
+}
+
+body.lichsu-page .content-card-horizontal:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(155, 126, 217, 0.3);
+    border-color: #ffd700;
+}
+
+body.lichsu-page .content-card-horizontal .card-title {
+    color: #7c5ac5;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+body.lichsu-page .content-card-horizontal .card-text {
+    color: #6b5a7a;
+}
+
+/* Subpage intro for lichsu.html */
+body.lichsu-page .subpage-intro {
+    background: linear-gradient(135deg, #f5f0ff, #fff9e6);
+    border: 2px solid #9b7ed9;
+    border-left: 5px solid #ffd700;
+}
+
+body.lichsu-page .subpage-intro h3 {
+    color: #7c5ac5;
+}
+
+/* CTA button for lichsu.html */
+body.lichsu-page .cta-button {
+    background: linear-gradient(145deg, #9b7ed9, #ffd700);
+    box-shadow: 0 10px 20px rgba(155, 126, 217, 0.3);
+}
+
+body.lichsu-page .cta-button:hover {
+    box-shadow: 0 15px 30px rgba(155, 126, 217, 0.5);
+}
+
+body.lichsu-page .cta-button.secondary {
+    background: #fff;
+    color: #9b7ed9;
+    border: 2px solid #9b7ed9;
+}
+
+body.lichsu-page .cta-button.secondary:hover {
+    background: #9b7ed9;
+    color: #fff;
+    border-color: #9b7ed9;
+}
+
+/* Video section for lichsu.html */
+body.lichsu-page .video-container {
+    box-shadow: 0 15px 35px rgba(155, 126, 217, 0.3);
+    border: 3px solid #ffd700;
+}
+
+/* Page title for lichsu.html */
+body.lichsu-page .page-title {
+    color: #7c5ac5;
+}
